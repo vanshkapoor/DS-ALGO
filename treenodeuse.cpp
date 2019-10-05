@@ -65,6 +65,19 @@ int numNodes(TreeNode<int>* root)
     return ans;
 
 }
+int max1=0;
+int heightT(TreeNode<int>* root)
+{
+    if(root == NULL)
+    {
+        return 0;
+    }
+    for(int i=0;i<root->children.size();i++)
+    {
+        max1 = heightT(root->children[i]);
+    }
+    return max1+1;
+}
 
 
 int main()
@@ -80,5 +93,7 @@ int main()
     TreeNode<int>* root ;
     root = takeinput();
     printT(root);
+    int m = heightT(root);
+    cout<<m<<endl;
 
 }
