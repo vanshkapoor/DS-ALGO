@@ -3,7 +3,9 @@
 using namespace std;
 
 
-//input
+
+
+//----------------input
 TreeNode<int>* takeinput()
 {
     int rootdata;
@@ -35,6 +37,8 @@ TreeNode<int>* takeinput()
 // }
 
 
+
+//---------------prints
 void printT(TreeNode<int>* root)
 {
     //edge case
@@ -55,6 +59,8 @@ void printT(TreeNode<int>* root)
     }
 }
 
+
+//-------------no of nodes
 int numNodes(TreeNode<int>* root)
 {
     int ans=1;
@@ -65,6 +71,9 @@ int numNodes(TreeNode<int>* root)
     return ans;
 
 }
+
+
+//------------height
 int max1=0;
 int heightT(TreeNode<int>* root)
 {
@@ -77,6 +86,31 @@ int heightT(TreeNode<int>* root)
         max1 = heightT(root->children[i]);
     }
     return max1+1;
+}
+
+
+//----------nodes at a depth 
+void depth(TreeNode<int>* root,int k)
+{
+    if(k==0){
+        cout<<"level data"<<root->data<<endl;
+    }
+    for(int i=0;i<root->children.size();i++)
+    {
+        depth(root->children[i],k-1);
+    }
+}
+
+
+
+//----------delete
+void deleteT(TreeNode<int>* root)
+{
+    for(int i=0;i<root->children.size();i++)
+    {
+        deleteT(root->children[i]);
+    }
+    delete root;
 }
 
 
@@ -96,4 +130,6 @@ int main()
     int m = heightT(root);
     cout<<m<<endl;
 
+    depth(root,2);
+    deleteT(root);
 }
