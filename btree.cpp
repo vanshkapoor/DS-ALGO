@@ -34,6 +34,8 @@ void printT(BtreeNode<int>* root)
     printT(root->right);    
 }
 
+
+//---------input
 BtreeNode<int>* takeinput()
 {
     int data;
@@ -53,6 +55,37 @@ BtreeNode<int>* takeinput()
 
 
 
+//-------------no of nodes
+int numNodes(BtreeNode<int>* root)
+{
+    if(root == NULL){
+        return 0;
+    }
+
+    return 1 + numNodes(root->left) + numNodes(root->right);
+}
+
+
+
+//------------diameter
+int height(BtreeNode<int>* root)
+{
+    if(root = NULL){
+        return 0;
+    }
+
+    return 1 + max(height(root->left),height(root->right));
+}
+
+int diameter(BtreeNode<int>* root)
+{
+    int option1 = height(root->left) + height(root->right);
+    int option2 = diameter(root->left);
+    int option3 = diameter(root->right);
+
+    return max(option1,max(option2,option3));
+}
+
 
 
 
@@ -65,6 +98,7 @@ int main()
     // root->right = node2;
     BtreeNode<int>* root = takeinput();
     printT(root);
+    cout<<numNodes(root);
     delete root;
     return 0;
 }
