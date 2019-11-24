@@ -23,6 +23,7 @@ int main()
                 k[i][w] = k[i-1][w];
             }else{
                 // main logic
+                
                 k[i][w] = max(p[i] + k[i-1][w-wt[i]] , k[i-1][w]);
             }
         }
