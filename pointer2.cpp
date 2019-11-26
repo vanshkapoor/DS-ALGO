@@ -12,7 +12,10 @@ int main()
 
     char *c = a;
     // char *c = &a[0];
-    cout<<c;
+    cout<<++c<<endl;
+    cout<<*(c);
+    // cout<<a++;
+    // cout<<&c;
 
     cout<<endl;
     char c1 = 'a';
