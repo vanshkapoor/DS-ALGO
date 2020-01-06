@@ -29,6 +29,11 @@ void merge(int arr[], int l[], int nl, int r[], int nr)
   {
     arr[k++] = r[j++];
   }
+  for(int q=0;q<7;q++)
+  {
+    cout<<arr[q];
+  }
+  cout<<endl;
 }
 
 
