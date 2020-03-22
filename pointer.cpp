@@ -4,7 +4,7 @@ using namespace std;
 void square(int &nn)
 {
     cout<<"\n &nn = "<<&nn;
-    cout<<"nn = "<<nn;
+    cout<<"nn = "<<nn++;
 }
 
 int main()
@@ -15,20 +15,21 @@ int main()
     cout<<endl;
     cout<<*p;
     p = p+1;
+    cout<<"*p = "<<*p;
     cout<<endl;
 
-    cout<<sizeof(p);
+    cout<<"size of : "<<sizeof(p);
     cout<<endl;
-    cout<<sizeof(i);
+    cout<<"size of i :"<<sizeof(i)<<endl;
 
     int *j;
     j = p;
-    cout<<j;
+    cout<<"j:"<<j;
 
     int *k;
     // k = &p; :ERROR  cannot convert ‘int**’ to ‘int*’ in assignment
     cout<<endl;
-    cout<<k;
+    cout<<"k = "<<k<<endl;
 
     int n = 3;
     cout<<"\n &n in main = \n"<<&n;

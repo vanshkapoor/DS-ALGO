@@ -15,7 +15,7 @@ class node{
 
 node *root = NULL;
 
-void append()
+void append(node *obj)
 {
     int data;
     cout<<"enter data";
@@ -33,6 +33,10 @@ void append()
         }
         p->next = temp;
     }
+
+    obj = root;
+    // cout<<obj->data;
+    
 }
 
 void addatbeg()
@@ -50,6 +54,27 @@ void addatbeg()
         root = temp; 
     }
 }
+
+bool detectLoop(node *p)
+{
+    node* arr[100];
+    // p = root;
+    int i=0;
+    while(p != NULL)
+    {
+        for(int j=0;j<i;j++)
+        {
+            if(arr[i] == p)
+            {
+                return true;
+            }
+        }
+        arr[i] = p;
+        i++;
+        p = p->next;        
+    }
+}
+
 
 void print()
 {
@@ -73,21 +98,27 @@ void printd(node *p){
 
 int main()
 {
-    append();
-    // print();
+    node *one = root;
+    append(one);
+    // print();    
 
-    append();
-    append();
+    append(one);
+    append(one);
+
+    // check()
 
     print();
 
-    addatbeg();
+    // addatbeg();
     print();
     cout<<endl;
     cout<<"root = "<<root;    
     cout<<"root add = "<<&root;    
-    printd(root);
-    printd(root);
+    // printd(root);
+    cout<<endl;
+    printd(one);
+    // cout<<endl;
+    // print();
 
     return 0;
 }
