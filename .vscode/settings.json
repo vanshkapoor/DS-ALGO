@@ -5,6 +5,9 @@
         "limits": "cpp",
         "valarray": "cpp",
         "ostream": "cpp",
-        "new": "cpp"
+        "new": "cpp",
+        "iostream": "cpp",
+        "bitset": "cpp",
+        "set": "cpp"
     }
 }

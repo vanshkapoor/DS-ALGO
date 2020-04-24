@@ -6,7 +6,7 @@ using namespace std;
 void selectactivity(int s[],int f[],int m)
 {
     int j=0;
-    for(int i=0;i<m;i++)
+    for(int i=1;i<m;i++)
     {
         if(s[i] >= f[j])
         {

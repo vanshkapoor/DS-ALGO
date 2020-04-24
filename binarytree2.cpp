@@ -45,6 +45,8 @@ int main()
     root->left = new node(2);
     root->right = new node(1);
     root->left->left = new node(5);
+    root->left->right = new node(6);
+
     // addtree(root);
     inorder(root);
     return 0;
