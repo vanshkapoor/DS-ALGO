@@ -8,6 +8,7 @@
         "new": "cpp",
         "iostream": "cpp",
         "bitset": "cpp",
-        "set": "cpp"
+        "set": "cpp",
+        "iosfwd": "cpp"
     }
 }
