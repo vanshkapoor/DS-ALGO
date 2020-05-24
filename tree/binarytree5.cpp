@@ -48,6 +48,15 @@ int BFS_height(tree *node)
     }
 }
 
+// SHORTCUT FOR HEIGHT
+// int bfshght(tree *obj)
+// {
+//     if(obj == NULL){return 0;}
+
+//     return (1 + max(obj->left,obj->right));
+// }
+
+
 
 void BFS_print_loop(tree* root,int height)
 {
