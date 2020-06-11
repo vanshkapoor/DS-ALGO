@@ -12,7 +12,8 @@ int main()
     while (A)
     {
         product = product * (A % 10);
-        v.insert(v.begin(), A % 10);
+        v.push_back(A % 10); //like a stack
+        // v.insert(v.begin(), A % 10);
         A = A / 10;
     }
 

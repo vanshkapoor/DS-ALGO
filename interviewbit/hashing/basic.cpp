@@ -27,6 +27,6 @@ int main()
     }
 
     // (amap.find(12) ==1)? cout<<"found":cout<<"not found";
-    cout << amap.end();
+    // cout << amap.end();
     return 0;
 }
