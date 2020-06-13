@@ -7,6 +7,7 @@ void permutations(string &str, int s, int n, int &count)
     {
         cout << str << endl;
         count++;
+        return;
     }
     else
     {
