@@ -29,6 +29,9 @@ int main()
 // function to find longest consecutive subsequence
 // n : size of array
 // arr[] : input array
+
+// SEQUENCE : 1-2-3-4-5-9-12-14-35-43
+// here sequence is 1-2-3-4-5
 int findLongestConseqSubseq(int arr[], int n)
 {
     //Your code here
