@@ -34,11 +34,11 @@ int main()
 
     cout << "i =" << i << "p = " << p << "p2 = " << p2 << endl;
 
-    // checkIncrement(p);
+    checkIncrement(p);
 
     // increment(p2);
     // increment2(p2);
-    increment3(p2);
+    // increment3(p2);
 
     cout << "i =" << i << "p = " << p << "p2 = " << p2 << endl;
 
