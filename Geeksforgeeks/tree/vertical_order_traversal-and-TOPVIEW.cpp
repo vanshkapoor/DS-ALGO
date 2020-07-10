@@ -50,6 +50,7 @@ void printNode(node *obj, int line, int l)
     if (line == l)
     {
         cout << obj->data << " ";
+        // return;   //DO THIS TO PRINT """TOP VIEW"""
     }
     printNode(obj->left, line, l - 1);
     printNode(obj->right, line, l + 1);
