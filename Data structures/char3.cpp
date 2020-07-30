@@ -46,7 +46,7 @@ int main()
     // }
 
     string ss = "vansh";
-    cout << ss.indexOf("an");
+    // cout << ss.indexOf("an");
 
     return 0;
 }

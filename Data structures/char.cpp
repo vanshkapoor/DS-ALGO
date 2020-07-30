@@ -97,7 +97,7 @@ int main()
     cout << (int)str[0] - '0';
     string c;
     int num = 5;
-    c = num + '0';
+    c = num + '2';
     cout << endl;
 
     cout << c;
@@ -105,7 +105,7 @@ int main()
     string s = "1234567890";
     // int nn = strlen(s);
     cout << s.length();
-    if ((int)s[0] - '0' == 1)
+    if ((int)s[2] - '2' == 1)
     {
         cout << "integer";
     }
