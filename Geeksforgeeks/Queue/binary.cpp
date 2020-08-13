@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string.h>
+#include <bits/stdc++.h>
 
 using namespace std;
 
@@ -20,7 +21,7 @@ int main()
         // st += s;
     }
     st += "1";
-    reverse(str.begin(), str.end());
+    reverse(st.begin(), st.end());
     cout << st;
     return 0;
 }

@@ -81,6 +81,7 @@ void BFS_print(struct tree *root, int level)
     if (level == 1)
     {
         cout << root->data << " ";
+        return;
     }
     BFS_print(root->left, level - 1);
     BFS_print(root->right, level - 1);
