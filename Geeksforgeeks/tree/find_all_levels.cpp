@@ -54,6 +54,20 @@ void findLevels(tree *obj, int level, int data)
     findLevels(obj->right, level + 1, data);
 }
 
+int findlevelfordata(tree *root, int data, int level)
+{
+    if (root == NULL)
+    {
+        return 0;
+    }
+    if (root->data == data)
+    {
+        return level;
+    }
+    return max(findlevelfordata(root->left, data, level + 1),
+               findlevelfordata(root->right, data, level + 1));
+}
+
 int main()
 {
     tree *obj = new tree(1);
@@ -65,6 +79,7 @@ int main()
 
     print(obj);
     findLevels(obj, 0, 3);
+    cout << findlevelfordata(obj, 4, 1) << endl;
     cout << "max -->" << maxi;
 
     return 0;

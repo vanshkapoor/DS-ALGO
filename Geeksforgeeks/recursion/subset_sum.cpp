@@ -25,7 +25,7 @@ int main()
 {
     int arr[] = {1, 3, 2, 5, 4, 7, 9};
 
-    int sum = 400;
+    int sum = 4;
     int n = sizeof(arr) / sizeof(arr[0]);
 
     cout << subset(arr, n - 1, sum);

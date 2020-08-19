@@ -16,10 +16,23 @@ void fns(int num)
     cout << endl;
 }
 
+void fns2(int num)
+{
+    if (num == 10)
+    {
+        return;
+    }
+    num++;
+    cout << "sender - " << num << endl;
+    fns2(num);
+    cout << "return - " << num;
+}
+
 int main()
 {
 
-    fns(3);
+    // fns(3);
+    fns2(3);
 
     return 0;
 }

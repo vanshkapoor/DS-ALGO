@@ -3,6 +3,7 @@
 #include <cstdlib>
 
 using namespace std;
+int intsize = sizeof(int) * 8;
 
 int minimumNumber(int n, string password)
 {

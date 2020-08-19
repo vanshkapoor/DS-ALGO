@@ -1,25 +1,42 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include <vector>
+
 using namespace std;
+
+void zeronone(int no, int &zero, int &one)
+{
+	//cout << "initial FUNCTION: " << zero << "-" << one << endl;
+
+	while (no)
+	{
+		(no % 2 == 0) ? zero++ : one++;
+		no /= 2;
+	}
+}
 
 int main()
 {
+	int n, m;
+	vector<int> v;
+	vector<pair<int, int>> zno;
+	cin >> n;
 
-	vector<int> v; //static alloc
-	vector<int> *vp = new vector<int>();
+	for (int i = 0; i < n; i++)
+	{
+		cin >> m;
+		v.push_back(m);
+	}
 
-	
-	v.push_back(10);
-	v.push_back(20);
-	v.push_back(30);
+	for (int i = 0; i < v.size(); i++)
+	{
+		int zero = 0;
+		int one = 0;
+		zeronone(v[i], zero, one);
+		pair<int, int> p;
+		p.first = zero;
+		p.second = one;
+		zno.push_back(p);
+		}
 
-	int m = v.size();
-	cout << m << endl;
-	cout << v[0] << endl;
-	cout << v[1] << endl;
-	v.pop_back();
-	cout << v.size() << endl;
-
-	cout << v[0];
 	return 0;
 }

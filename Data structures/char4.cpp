@@ -11,6 +11,8 @@ int main()
     cout << (int)num[1] - '0' << endl;
     cout << (int)'0' << endl;
 
+    cout << sizeof(s);
+
     cout << s.substr(1, s.length());
     return 0;
 }
