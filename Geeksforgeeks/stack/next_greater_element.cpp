@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int arr[] = {11, 13, 21, 3};
+    int arr[] = {11, 13, 21, 3, 10, 9, 8};
     stack<int> st;
     int n = sizeof(arr) / sizeof(arr[0]);
 
@@ -20,7 +20,7 @@ int main()
             continue;
         }
 
-        while (arr[i] > st.top() && st.empty() == false)
+        while (!st.empty() && arr[i] > st.top())
         {
             cout << st.top() << " ------> " << arr[i] << endl;
             st.pop();
