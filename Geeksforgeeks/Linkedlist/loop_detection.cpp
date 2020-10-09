@@ -1,5 +1,6 @@
 #include <iostream>
 #include <bits/stdc++.h>
+// #include <unordered_set>
 
 using namespace std;
 
@@ -40,23 +41,32 @@ void print(struct node *head)
         head = head->next;
     }
 }
-void loop_detection(struct node *head)
-{
-    unordered_set<int> s;
-    while (head != NULL)
-    {
-        if (s.find(head) == s.end())
-        {
-            s.insert(head);
-        }
-        else
-        {
-            cout << "loop found";
-            return;
-        }
+// void loop_detection(struct node *head)
+// {
+//     unordered_set<int> s;
+//     while (head != NULL)
+//     {
+//         if (s.find(head) == s.end())
+//         {
+//             s.insert(head);
+//         }
+//         else
+//         {
+//             cout << "loop found";
+//             return;
+//         }
 
-        head = head->next;
+//         head = head->next;
+//     }
+// }
+
+int check(int a)
+{
+    if (a < 5)
+    {
+        return 0;
     }
+    return 1;
 }
 
 int main()
@@ -70,6 +80,12 @@ int main()
     append(root);
     append(root);
     print(root);
+    cout << root->data;
+    cout << endl;
+    if (check(6))
+    {
+        cout << "true";
+    }
 
     return 0;
 }

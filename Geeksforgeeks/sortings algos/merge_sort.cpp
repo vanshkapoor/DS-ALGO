@@ -2,9 +2,19 @@
 
 using namespace std;
 
+void print(int *arr, int n)
+{
+    cout << "ls =" << n << endl;
+    for (int i = 0; i < (sizeof(arr) / sizeof(arr[0])); i++)
+    {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+}
 void merge_sort(int arr[], int left[], int right[], int ls, int rs)
 {
     int i = 0, j = 0, k = 0;
+
     while (i < ls && j < rs)
     {
         if (left[i] < right[j])
@@ -26,6 +36,7 @@ void merge_sort(int arr[], int left[], int right[], int ls, int rs)
     {
         arr[k++] = right[j++];
     }
+    print(arr, ls);
 }
 
 void merge(int arr[], int n)
