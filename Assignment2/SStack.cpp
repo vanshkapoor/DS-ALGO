@@ -11,6 +11,7 @@ SStack::SStack(int cap)
 {
     Capacity = cap;
     DynamicStack = new string[cap];
+    used=-1;
 }
 
 SStack::SStack(const SStack &s)
@@ -27,7 +28,64 @@ void SStack::push()
 {
     string s;
     cin >> s;
-    cout << "pushing element =" << s << endl;
+    if(used>=Capacity-1)
+        cout<<"Stack overflow!";
+    else
+        DynamicStack[++used]=s;
+    cout << "Pushing element =" << s << endl;
+}
+
+string SStack::pop()
+{
+    if(used<0) 
+        return "Stack is empty.";
+    else
+    {
+        string store;
+        store=DynamicStack[used--];
+        // cout<<"Element popped = "<< store << endl;
+        return store;
+    }
+}
+
+string SStack::top() const
+{
+    if(used<0)  
+        return "Stack is empty.";
+    return DynamicStack[used];
+}
+
+bool SStack::isEmpty() const
+{
+    if(used<0)
+        return true;
+    else
+        return false;
+}
+
+int SStack::size() const
+{   
+    int size=0;
+    for(int i=used;i>=0;i--)
+        size++;
+    return size;
+}
+
+int SStack::getCapacity() const
+{
+    return Capacity;
+}
+
+void SStack::print() const
+{   
+    if(used<0)
+    {   
+        cout<<"Stack is empty.";
+        return;
+    }
+    for(int i=used;i>=0;i--)
+        cout<<DynamicStack[i]<<" ";
+    cout<<endl;
 }
 
 void check()

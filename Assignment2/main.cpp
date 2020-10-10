@@ -23,13 +23,31 @@ a:
     switch (choice)
     {
     case 1:
-        // check();
-        // string s;
-        // cin >> s;
         obj.push();
         break;
+    case 2:
+        cout<<"Element popped = "<< obj.pop() << endl;
+        break;
+    case 3:
+        cout<<"Top of the stack = "<< obj.top() << endl;
+        break;
+    case 4:
+        if(obj.isEmpty()==true)
+            cout<<"Stack is empty." << endl;
+        else
+            cout<<"Stack is not empty." << endl;
+        break;
+    case 5:
+        cout<<"Number of elements stored in the stack are " << obj.size() <<endl;
+        break;
+    case 6:
+        cout<<"Capacity of the stack is " << obj.getCapacity() << endl;
+        break;
+    case 7:
+        obj.print();
+        break;
     default:
-        cout << "Wrong Choice";
+        cout << "Wrong Choice" << endl;
         exit(3000);
         break;
     }

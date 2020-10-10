@@ -10,7 +10,6 @@ private:
     int Capacity;         //Max size of stack
     string *DynamicStack; //dynamic array
     int used;             //items stored
-
 public:
     SStack(int cap);
     SStack(const SStack &s);
