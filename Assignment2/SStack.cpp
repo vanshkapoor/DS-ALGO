@@ -11,12 +11,13 @@ SStack::SStack(int cap)
 {
     Capacity = cap;
     DynamicStack = new string[cap];
-    used=-1;
+    used = -1;
 }
 
 SStack::SStack(const SStack &s)
 {
     this->Capacity = s.Capacity;
+    this->used = s.used;
     this->DynamicStack = new string[s.Capacity];
     for (int i = 0; i < s.Capacity; i++)
     {
@@ -24,25 +25,33 @@ SStack::SStack(const SStack &s)
     }
 }
 
-void SStack::push()
+void SStack::push(string name)
 {
+    if (name != "No value")
+    {
+        if (used >= Capacity - 1)
+            cout << "Stack overflow!";
+        else
+            DynamicStack[++used] = name;
+        return;
+    }
     string s;
     cin >> s;
-    if(used>=Capacity-1)
-        cout<<"Stack overflow!";
+    if (used >= Capacity - 1)
+        cout << "Stack overflow!";
     else
-        DynamicStack[++used]=s;
+        DynamicStack[++used] = s;
     cout << "Pushing element =" << s << endl;
 }
 
 string SStack::pop()
 {
-    if(used<0) 
+    if (used < 0)
         return "Stack is empty.";
     else
     {
         string store;
-        store=DynamicStack[used--];
+        store = DynamicStack[used--];
         // cout<<"Element popped = "<< store << endl;
         return store;
     }
@@ -50,23 +59,23 @@ string SStack::pop()
 
 string SStack::top() const
 {
-    if(used<0)  
+    if (used < 0)
         return "Stack is empty.";
     return DynamicStack[used];
 }
 
 bool SStack::isEmpty() const
 {
-    if(used<0)
+    if (used < 0)
         return true;
     else
         return false;
 }
 
 int SStack::size() const
-{   
-    int size=0;
-    for(int i=used;i>=0;i--)
+{
+    int size = 0;
+    for (int i = used; i >= 0; i--)
         size++;
     return size;
 }
@@ -77,20 +86,45 @@ int SStack::getCapacity() const
 }
 
 void SStack::print() const
-{   
-    if(used<0)
-    {   
-        cout<<"Stack is empty.";
+{
+    if (used < 0)
+    {
+        cout << "Stack is empty.";
         return;
     }
-    for(int i=used;i>=0;i--)
-        cout<<DynamicStack[i]<<" ";
-    cout<<endl;
+    for (int i = used; i >= 0; i--)
+        cout << DynamicStack[i] << " ";
+    cout << endl;
 }
 
 void check()
 {
     cout << "check connection of stack.cpp with main.cpp" << endl;
+}
+
+void copystack(SStack &obj)
+{
+    string str;
+    int num = 0;
+    cout << "Creating a copy of current stack.." << endl;
+    SStack newobj(obj);
+    cout << "COPY STACK CREATED SUCCESSFULLY" << endl;
+    cout << "ENTER NUMBER OF RECORDS TO INSERT IN NEW STACK" << endl;
+    cin >> num;
+    while (num > 0)
+    {
+        cin >> str;
+        newobj.push(str);
+        num--;
+    }
+    cout << "------- NEW CONSTRUCTOR STATS ------" << endl
+         << endl;
+    cout << "CAPACITY:          " << newobj.getCapacity() << endl;
+    cout << "USED SPACE:        " << newobj.size() << endl;
+    cout << "TOP ELEMENT:       " << newobj.top() << endl;
+    cout << "STACK ELEMENTS:    " << endl;
+    newobj.print();
+    return;
 }
 
 // int main()

@@ -15,7 +15,7 @@ public:
     SStack(const SStack &s);
     // ~SStack();
 
-    void push();
+    void push(string name);
     string pop();
     string top() const;
     bool isEmpty() const;
