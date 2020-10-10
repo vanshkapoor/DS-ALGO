@@ -23,8 +23,10 @@ SStack::SStack(const SStack &s)
     }
 }
 
-void SStack::push(string s)
+void SStack::push()
 {
+    string s;
+    cin >> s;
     cout << "pushing element =" << s << endl;
 }
 

@@ -26,7 +26,7 @@ a:
         // check();
         // string s;
         // cin >> s;
-        obj.push("check");
+        obj.push();
         break;
     default:
         cout << "Wrong Choice";
