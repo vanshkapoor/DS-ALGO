@@ -77,6 +77,8 @@ a:
     cout << "(6) CAPACITY OF STACK" << endl;
     cout << "(7) PRINT THE STACK" << endl;
     cout << "(8) TEST COPY CONTRUCTOR" << endl;
+    cout << "(9) TEST EQUALITY OF STACKS" << endl;
+    cout << "(10) CREATE UNION OF TWO STACKS" << endl;
     cout << "PLEASE ENTER YOUR CHOICE" << endl;
     int choice = 0;
     cin >> choice;
@@ -118,6 +120,14 @@ a:
         break;
     case 8:
         copystack(obj);
+        cout << endl;
+        break;
+    case 9:
+        CheckEquals();
+        cout << endl;
+        break;
+    case 10:
+        unionofstack();
         cout << endl;
         break;
     default:

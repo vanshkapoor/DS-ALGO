@@ -97,6 +97,11 @@ void SStack::print() const
     cout << endl;
 }
 
+string SStack::getElement(int i) const
+{
+    return DynamicStack[i];
+}
+
 void check()
 {
     cout << "check connection of stack.cpp with main.cpp" << endl;
@@ -125,6 +130,131 @@ void copystack(SStack &obj)
     cout << "STACK ELEMENTS:    " << endl;
     newobj.print();
     return;
+}
+
+bool equals(const SStack &s1, const SStack &s2)
+{
+    if (s1.size() != s1.size())
+    {
+        return false;
+    }
+    for (int i = 0; i < s1.size(); i++)
+    {
+        if (s1.getElement(i) != s2.getElement(i))
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
+void CheckEquals()
+{
+    char ch = 'y';
+    int capacity1, capacity2;
+    cout << "CREATING STACK 1 :" << endl;
+    cout << "Enter capacity" << endl;
+    cin >> capacity1;
+    SStack obj1(capacity1);
+    cout << "Enter elements for Stack 1" << endl;
+    while (ch == 'y')
+    {
+        string s;
+        cout << "Enter a Last name" << endl;
+        cin >> s;
+        obj1.push(s);
+        cout << "Want to enter more? (Enter y)" << endl;
+        cin >> ch;
+    }
+    cout << endl;
+    cout << endl;
+
+    ch = 'y';
+
+    cout << "CREATING STACK 2 :" << endl;
+    cout << "Enter capacity" << endl;
+    cin >> capacity2;
+    SStack obj2(capacity2);
+    cout << "Enter elements for Stack 2" << endl;
+    while (ch == 'y')
+    {
+        string s;
+        cout << "Enter a Last name" << endl;
+        cin >> s;
+        obj2.push(s);
+        cout << "Want to enter more? (Enter y)" << endl;
+        cin >> ch;
+    }
+    cout << endl;
+    cout << endl;
+    if (equals(obj1, obj2))
+    {
+        cout << "YES!! THE TWO STACKS ARE EQUAL" << endl;
+    }
+    else
+    {
+        cout << "NO!! THE TWO STACKS ARE NOT EQUAL" << endl;
+    }
+}
+
+SStack operator+(const SStack &s1, const SStack &s2)
+{
+    int capacity = s1.getCapacity() + s2.getCapacity();
+    SStack obj(capacity);
+
+    for (int i = 0; i < s1.size(); i++)
+    {
+        obj.push(s1.getElement(i));
+    }
+    for (int i = 0; i < s2.size(); i++)
+    {
+        obj.push(s2.getElement(i));
+    }
+
+    return obj;
+}
+
+void unionofstack()
+{
+    char ch = 'y';
+    int capacity1, capacity2;
+    cout << "CREATING STACK 1 :" << endl;
+    cout << "Enter capacity" << endl;
+    cin >> capacity1;
+    SStack obj1(capacity1);
+    cout << "Enter elements for Stack 1" << endl;
+    while (ch == 'y')
+    {
+        string s;
+        cout << "Enter a Last name" << endl;
+        cin >> s;
+        obj1.push(s);
+        cout << "Want to enter more? (Enter y/n)" << endl;
+        cin >> ch;
+    }
+    cout << endl;
+    cout << endl;
+
+    ch = 'y';
+
+    cout << "CREATING STACK 2 :" << endl;
+    cout << "Enter capacity" << endl;
+    cin >> capacity2;
+    SStack obj2(capacity2);
+    cout << "Enter elements for Stack 2" << endl;
+    while (ch == 'y')
+    {
+        string s;
+        cout << "Enter a Last name" << endl;
+        cin >> s;
+        obj2.push(s);
+        cout << "Want to enter more? (Enter y)" << endl;
+        cin >> ch;
+    }
+    cout << endl;
+    cout << endl;
+    SStack Unionobj = obj1 + obj2;
+    Unionobj.print();
 }
 
 // int main()

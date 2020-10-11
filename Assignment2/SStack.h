@@ -22,8 +22,9 @@ public:
     void print() const;
     int size() const;
     int getCapacity() const;
+    string getElement(int i) const;
 };
 
 // TO DO FUNCTIONS AT END
-// SStack operator+(const SStack &s1, const SStack &s2);
-// bool equals(const SStack &s1, const SStack &s2);
+SStack operator+(const SStack &s1, const SStack &s2);
+bool equals(const SStack &s1, const SStack &s2);
