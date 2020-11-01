@@ -24,6 +24,8 @@ int main()
     char str[] = "vanshsnav";
     int s = 0;
     int e = sizeof(str) / sizeof(str[0]);
+    cout << e;
+    cout << str[e - 2];
     // cout << e;
     cout << palindrome(str, s, e - 2);
 

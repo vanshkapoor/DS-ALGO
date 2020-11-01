@@ -13,7 +13,10 @@ private:
 public:
     SStack(int cap);
     SStack(const SStack &s);
-    // ~SStack();
+    ~SStack()
+    {
+        cout << "Destructor called";
+    }
 
     void push(string name);
     string pop();
