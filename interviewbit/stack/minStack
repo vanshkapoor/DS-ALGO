@@ -1,0 +1,23 @@
+stack<int>s1;
+stack<int>s2;
+MinStack::MinStack() {
+}
+
+void MinStack::push(int x) {
+    s1.push(x);
+    if(s2.empty() || x<=getMin()) s2.push(x);
+}
+
+void MinStack::pop() {
+    if(s1.top()==getMin())s1.pop();
+        s2.pop();
+}
+
+int MinStack::top() {
+    return s1.top();
+}
+
+int MinStack::getMin() {
+    return s2.top();
+}
+
