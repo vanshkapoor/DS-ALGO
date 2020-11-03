@@ -69,3 +69,35 @@ bool LinkedSortedList ::insert(string lname)
 
     return false;
 }
+
+int LinkedSortedList ::size() const
+{
+    return nodeCount;
+}
+
+bool LinkedSortedList ::getlast(string &val)
+{
+    LinkedNode *node = head;
+    LinkedNode *p = head;
+    if (node == NULL)
+    {
+        return false;
+    }
+    if (node->next == NULL)
+    {
+        head = NULL;
+        val = node->value;
+        nodeCount = 0;
+        return true;
+    }
+    while (node->next != NULL)
+    {
+        /* code */
+        p = node;
+        node = node->next;
+    }
+    val = p->next->value;
+    p->next = NULL;
+    nodeCount -= 1;
+    return true;
+}
