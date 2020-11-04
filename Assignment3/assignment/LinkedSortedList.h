@@ -66,6 +66,8 @@ public:
 	{
 		head = res;
 	}
+	void updateSize(LinkedSortedList* obj1,LinkedSortedList* ob2);
+
 };
 
 //Merge two sorted linked list into one sorted linked list, and return the head of the merged sorted linked list.

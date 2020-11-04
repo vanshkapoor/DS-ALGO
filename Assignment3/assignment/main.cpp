@@ -19,7 +19,7 @@ int main()
 a:
     cout << "Enter number of lastnames to read" << endl;
     cin >> cnt;
-    if (cnt % 6 != 0 || cnt % 20 != 0)
+    if (cnt % 6 != 0 && cnt % 20 != 0)
     {
         goto a;
     }
@@ -113,11 +113,35 @@ lastval:
     //
     cout << "CREATING SECOND LINKED LIST" << endl;
     LinkedSortedList *obj2 = new LinkedSortedList();
-    obj2->insert("V");
-    obj2->insert("B");
-    obj2->insert("A");
-    obj2->insert("AA");
-    // cout<<endl;
+    // obj2->insert("V");
+    // obj2->insert("B");
+    // obj2->insert("A");
+    // obj2->insert("AA");
+    // // cout<<endl;
+    file.open(filename.c_str());
+
+
+x:
+    cout << "Enter number of lastnames to read" << endl;
+    cin >> cnt;
+    if (cnt % 6 != 0 && cnt % 20 != 0)
+    {
+        goto x;
+    }
+    cout << "LASTNAMES DATABASE ENTERED : " << endl
+         << endl;
+    while (file >> word && cnt > 0)
+    {
+
+        cout << word;
+        obj2->insert(word);
+        cnt--;
+        cout << endl;
+    }
+    file.close();
+    cout << "FILE CLOSED" << endl
+         << endl;
+
     cout << "SECOND LINKED LIST :" << endl;
     obj2->print();
     cout << endl
@@ -140,6 +164,7 @@ lastval:
     LinkedNode *res = MergeLinkedSortedList(obhead1, obhead2);
     LinkedSortedList *obj3 = new LinkedSortedList;
     obj3->updateHead(res);
+    obj3->updateSize(obj,obj2);
     obj3->print();
 
     cout << endl;

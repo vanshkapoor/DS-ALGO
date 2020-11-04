@@ -75,6 +75,11 @@ int LinkedSortedList ::size() const
     return nodeCount;
 }
 
+void LinkedSortedList ::updateSize(LinkedSortedList* obj1,LinkedSortedList* obj2)
+{
+  nodeCount=obj1->size() + obj2->size();
+}
+
 bool LinkedSortedList ::getlast(string &val)
 {
     LinkedNode *node = head;
