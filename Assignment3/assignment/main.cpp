@@ -9,7 +9,7 @@ int main()
 {
     char ch;
     int cnt = 10;
-    fstream file;
+    fstream file, file2;
     string word;
 
     string filename = "all.last.txt";
@@ -49,10 +49,10 @@ a:
 
     // insertion code
     cout << "TESTING INSERTION" << endl;
-    cout << "ADDED VALUE = dbca, abcdb, acbd" << endl;
-    obj->insert("dbca");
-    obj->insert("abcd");
-    obj->insert("acbd");
+    cout << "ADDED VALUE = DBCA, ABCD, ACBD" << endl;
+    obj->insert("DBCA");
+    obj->insert("ABCD");
+    obj->insert("ACBD");
     cout << "VALUES INSERTED" << endl
          << endl;
     cout << "WOULD YOU LIKE TO PRINT OUR LINKEDLIST (y/n)" << endl;
@@ -80,7 +80,7 @@ lastval:
     }
     cout << endl
          << endl;
-    cout << "PRINTING LINKEDLIST";
+    cout << "PRINTING LINKED LIST" << endl;
     obj->print();
     cout << endl
          << endl;
@@ -94,12 +94,12 @@ lastval:
     cout << "REMOVED VALUE = " << returnvalue << endl
          << endl;
 
-    cout << "PRINTING LINKEDLIST :" << endl
+    cout << "PRINTING LINKED LIST :" << endl
          << endl;
     obj->print();
     cout << endl;
     cout << endl;
-    obj->clear();
+    // obj->clear();
 
     // cout << endl;
     // obj->getlast(lastval);
@@ -111,19 +111,38 @@ lastval:
     // obj->getlast(lastval);
     // obj->print();
     //
-    // LinkedSortedList *obj2 = new LinkedSortedList();
-    // obj2->insert("a");
-    // obj2->insert("v");
-    // obj2->insert("c");
-    // obj2->insert("b");
+    cout << "CREATING SECOND LINKED LIST" << endl;
+    LinkedSortedList *obj2 = new LinkedSortedList();
+    obj2->insert("V");
+    obj2->insert("B");
+    obj2->insert("A");
+    obj2->insert("AA");
     // cout<<endl;
-    // obj2->print();
-    // //LinkedSortedList * res= MergeLinkedSortedList();
-    // cout<<endl;
+    cout << "SECOND LINKED LIST :" << endl;
+    obj2->print();
+    cout << endl
+         << endl
+         << endl;
 
-    //
-    // cout << endl;
-    // obj->print();
-    //res->print();
+    cout << "MERGEING THE 2 LINKED LISTS" << endl;
+    cout << "LINKED LIST 1 : " << endl;
+    obj->print();
+    cout << endl;
+    cout << "LINKED LIST 2 : " << endl;
+    obj2->print();
+    cout << endl
+         << endl;
+    cout << "AFTER MERGE" << endl;
+
+    LinkedNode *obhead1 = obj->gethead();
+    LinkedNode *obhead2 = obj2->gethead();
+    // cout << obhead2->value;
+    LinkedNode *res = MergeLinkedSortedList(obhead1, obhead2);
+    LinkedSortedList *obj3 = new LinkedSortedList;
+    obj3->updateHead(res);
+    obj3->print();
+
+    cout << endl;
+    cout << "------------------ALL FUNCTIONS EXECUTED -------------------" << endl;
     return 0;
 }

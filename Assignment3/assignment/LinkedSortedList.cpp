@@ -6,7 +6,7 @@ using namespace std;
 
 void LinkedSortedList ::clear()
 {
-    cout << "CLEARED LINKEDLIST";
+    cout << "CLEARED LINKEDLIST" << endl;
     delete head;
 }
 
@@ -20,7 +20,7 @@ void LinkedSortedList ::print() const
         cout << p->value << endl;
         p = p->next;
     }
-    cout << "LINKEDLIST SIZE = " << nodeCount;
+    cout << "size = " << nodeCount;
 }
 
 bool LinkedSortedList ::insert(string lname)

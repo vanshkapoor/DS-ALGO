@@ -57,6 +57,15 @@ public:
 	// if the list is empty.  Note:  the "const" keyword indicates that
 	// this function cannot change the contents of the sorted linked list.
 	void print() const;
+
+	LinkedNode *gethead()
+	{
+		return head;
+	}
+	void updateHead(LinkedNode *res)
+	{
+		head = res;
+	}
 };
 
 //Merge two sorted linked list into one sorted linked list, and return the head of the merged sorted linked list.
