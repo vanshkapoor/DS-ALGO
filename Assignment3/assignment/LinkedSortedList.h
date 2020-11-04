@@ -26,15 +26,16 @@ public:
 	}
 
 	// Destructor
-	~LinkedSortedList();
+	~LinkedSortedList()
+	{
+		delete head;
+	}
 
 	// Return the number of the elements in the sorted linked list
 	int size() const;
 
 	// Clear the list.  Free any dynamic storage.
 	void clear();
-
-	void check();
 
 	//Insert a last name into the sorted linked list (in non-descreasing order)
 	//in the right position according to string value so that

@@ -15,8 +15,11 @@ public:
   LinkedNode *next; // Pointer to the next node
 
   // Simple inline constructor:  initialize values
-
-  LinkedNode(string newval = " ", LinkedNode *newptr = NULL)
+  // LinkedNode()
+  // {
+  //   //value="";  next=NULL;
+  // }
+  LinkedNode(string newval, LinkedNode *newptr = NULL)
   {
     value = newval;
     next = newptr;

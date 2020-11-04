@@ -4,9 +4,10 @@
 
 using namespace std;
 
-void LinkedSortedList ::check()
+void LinkedSortedList ::clear()
 {
-    cout << "check" << endl;
+    cout << "CLEARED LINKEDLIST";
+    delete head;
 }
 
 void LinkedSortedList ::print() const
@@ -16,11 +17,10 @@ void LinkedSortedList ::print() const
 
     while (p != NULL)
     {
-        cout << p->value << "(" << p->value.length() << ")"
-             << " - ";
+        cout << p->value << endl;
         p = p->next;
     }
-    cout << nodeCount;
+    cout << "LINKEDLIST SIZE = " << nodeCount;
 }
 
 bool LinkedSortedList ::insert(string lname)
@@ -133,5 +133,24 @@ bool LinkedSortedList ::remove_nth_element_from_end(string &returnvalue, int n)
         p->next = c->next;
         nodeCount--;
         return true;
+    }
+}
+
+LinkedNode *MergeLinkedSortedList(LinkedNode *head1, LinkedNode *head2)
+{
+    if (!head1)
+        return head2;
+    if (!head2)
+        return head1;
+
+    if (head1->value < head2->value)
+    {
+        head1->next = MergeLinkedSortedList(head1->next, head2);
+        return head1;
+    }
+    else
+    {
+        head2->next = MergeLinkedSortedList(head1, head2->next);
+        return head2;
     }
 }
