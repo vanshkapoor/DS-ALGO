@@ -19,7 +19,8 @@ public:
 	}
 	bool clear(); // using postorder tree traversal
 	bool insert(Employee &emp);
-	Employee *search(int k);
+	// void AddinBinaryTree(Employee &emp);  // I added it
+	Employee search(int k);
 	bool remove(int k);
 	int BSTsize();
 	bool print(); // using inorder tree traversal

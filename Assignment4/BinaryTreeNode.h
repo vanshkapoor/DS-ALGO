@@ -31,10 +31,19 @@ public:
 		return right;
 	}
 
-	BinaryTreeNode *printPerson()
+	void printPerson()
 	{
 		person.printPersonObj();
 	}
+	int getPersonID()
+	{
+		return person.getID();
+	}
+	Employee getPerson()
+	{
+		return person;
+	}
+	// Employee searchEmployee()
 
 	~BinaryTreeNode();
 };
