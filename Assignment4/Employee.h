@@ -38,6 +38,7 @@ public:
 	int getID() const;
 	string getFirstName() const;
 	string getLastName() const;
+	void printPersonObj();
 	friend ostream &operator<<(ostream &outs, Employee &person);
 	friend istream &operator>>(istream &ins, Employee &person);
 };

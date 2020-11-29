@@ -21,6 +21,21 @@ public:
 		person = newEmployee;
 	}
 
+	BinaryTreeNode *getLeft()
+	{
+		return left;
+	}
+
+	BinaryTreeNode *getRight()
+	{
+		return right;
+	}
+
+	BinaryTreeNode *printPerson()
+	{
+		person.printPersonObj();
+	}
+
 	~BinaryTreeNode();
 };
 #endif

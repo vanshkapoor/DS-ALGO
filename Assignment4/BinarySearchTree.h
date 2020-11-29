@@ -12,9 +12,12 @@ using namespace std;
 class BinarySearchTree
 {
 public:
-	BinarySearchTree();	 //constructor
-	~BinarySearchTree(); //destructor
-	bool clear();		 // using postorder tree traversal
+	BinarySearchTree(); //constructor
+	~BinarySearchTree() //destructor
+	{
+		cout << "deleted";
+	}
+	bool clear(); // using postorder tree traversal
 	bool insert(Employee &emp);
 	Employee *search(int k);
 	bool remove(int k);

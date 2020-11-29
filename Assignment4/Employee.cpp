@@ -50,6 +50,13 @@ bool operator==(const Employee &p1, const Employee &p2)
     return true;
 }
 
+void Employee ::printPersonObj()
+{
+    cout << "Employee ID : " << ID;
+    cout << "First Name : " << firstname;
+    cout << "Last name : " << lastname;
+}
+
 void readandwriteFile(int n)
 {
     int cnt = 0;
