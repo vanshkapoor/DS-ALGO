@@ -14,7 +14,7 @@ void readFile(int n)
     // add that employee to binary tree node
     if (n < 20 || n > 50)
     {
-        cout << "Enter no of records  between 20 to 50 only ";
+        cout << "Enter no of records  between 20 and 50 only ";
         int p = 0;
         cin >> p;
         readFile(p);
@@ -34,18 +34,37 @@ void readFile(int n)
     string word;
     int total_cnt = 0;
 
-    while (file >> word && n > 0)
+    string firstname;
+    string lastname;
+    string ID;
+    while (file >> word)
     {
-
-        cout << word << "     ";
-        cnt++;
-        if (cnt == 3)
+        if (cnt == 0)
         {
-            cout << endl;
-            cnt = 0;
-            total_cnt++;
-            n--;
+            firstname = word;
         }
+        else if (cnt == 1)
+        {
+            lastname = word;
+        }
+        else if (cnt == 2)
+        {
+            ID = word;
+        }
+        else
+        {
+            stringstream toint(ID);
+            cnt = 0;
+            int id = 0;
+            cout << firstname << " " << lastname << " " << ID;
+            toint >> id;
+            // int id =
+            Employee e(id, lastname, firstname);
+            // e.printPersonObj();
+            root->insert(e);
+            cout << endl;
+        }
+        cnt++;
     }
 
     // while (n-- > 0)
@@ -64,7 +83,7 @@ void readFile(int n)
     //     cnt++;
     // }
     cout << endl;
-    cout << "TOTAL RECORD COUNT = " << total_cnt << endl;
+    cout << "TOTAL RECORD COUNT = " << cnt << endl;
     file.close();
 }
 
