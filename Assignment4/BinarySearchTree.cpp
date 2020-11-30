@@ -136,11 +136,11 @@ BinaryTreeNode *remove2(BinaryTreeNode *root, int k, bool &res)
 }
 bool BinarySearchTree ::remove(int k)
 {
-    print();
+    // print();
     bool res = false;
 
     root = remove2(root, k, res);
     size = size - 1;
-    print();
+    // print();
     return res;
 }
