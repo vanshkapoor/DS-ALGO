@@ -55,6 +55,7 @@ void Employee ::printPersonObj()
     cout << "Employee ID : " << ID;
     cout << "  First Name : " << firstname;
     cout << "  Last name : " << lastname;
+    // cout << endl;
 }
 
 void readandwriteFile(int n)
@@ -161,9 +162,6 @@ void read_specified(int total_cnt)
         readandwriteFile(n);
     }
 }
-
-
-
 
 // int main()
 // {

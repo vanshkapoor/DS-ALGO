@@ -39,6 +39,7 @@ void readFile(int n)
     string ID;
     while (file >> word)
     {
+
         if (cnt == 0)
         {
             firstname = word;
@@ -63,6 +64,7 @@ void readFile(int n)
             // e.printPersonObj();
             root->insert(e);
             cout << endl;
+            total_cnt++;
         }
         cnt++;
     }
@@ -72,7 +74,6 @@ void readFile(int n)
     //     string firstname;
     //     string lastname;
     //     int id;
-
     //     file >> firstname;
     //     file >> lastname;
     //     file >> id;
@@ -82,42 +83,96 @@ void readFile(int n)
     //     cout << endl;
     //     cnt++;
     // }
+
     cout << endl;
-    cout << "TOTAL RECORD COUNT = " << cnt << endl;
+    cout << "TOTAL RECORD COUNT = " << total_cnt << endl;
+    if (total_cnt == 0)
+    {
+        cout << "Error reading from file through your compiler." << endl;
+    }
     file.close();
+    cout << endl;
+    cout << endl;
 }
 
 int main()
 {
 
     int n;
-    cout << "Enter the number of records to be read from the database";
+    cout << "Enter the number of records to be read from the database ";
     cin >> n;
-    //readFile(n);
-    //  readFile(n, root);
+    readFile(n);
+    // readFile(n, root);
     Employee e(10, "sharma", "kaushal");
-    e.printPersonObj();
+    // e.printPersonObj();
     root->insert(e);
-    root->print();
+    // root->print();
 
     Employee e2(5, "kapoor", "VANSH");
-    Employee e3(3, "kapoor", "VANSH");
-    Employee e4(6, "kapoor", "VANSH");
-    Employee e5(12, "kapoor", "VANSH");
+    Employee e3(3, "kjl", "VANSH");
+    Employee e4(6, "kapoor", "VAH");
+    // Employee e5(12, "kaoor", "VANSH");
+    // Employee e6(9, "kl", "varun");
 
     //e.printPersonObj();
     root->insert(e2);
     root->insert(e3);
     root->insert(e4);
-    root->insert(e5);
+    // root->insert(e5);
+    // root->insert(e6);
 
     root->print();
     cout << endl;
-    root->remove(15);
-    root->print();
     cout << endl;
-
+    cout << "SIZE OF BST : ";
     cout << "SIZE = " << root->BSTsize();
+    cout << endl;
+    // cout << endl;
+    // cout << endl;
+    // cout << "ENTER employee details to add to your BST" << endl;
+    // cout << endl;
+    // string firstname, lastname;
+    // int empid;
+    // cout << "ENTER Firstname :" << endl;
+    // cin >> firstname;
+    // cout << endl;
+    // cout << "ENTER Lastname :" << endl;
+    // cin >> lastname;
+    // cout << endl;
+    // cout << "ENTER ID : " << endl;
+    // cin >> empid;
+    // cout << endl;
+    // Employee emp(empid, lastname, firstname);
+    // root->insert(emp);
+    // root->print();
+    // cout << endl;
+    cout << endl;
+    cout << endl;
+
+    cout << "Enter ID to remove" << endl;
+    int removeID;
+    cin >> removeID;
+    cout << endl;
+    cout << endl;
+    cout << "BEFORE DELETION : " << endl;
+    root->print();
+    root->remove(removeID);
+    cout << endl;
+    cout << endl;
+    cout << "AFTER DELETION : " << endl;
+    root->print();
+    cout << endl;
+    cout << "SIZE OF BST : ";
+    cout << "SIZE = " << root->BSTsize();
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Enter ID to search" << endl;
+    int checkID;
+    cin >> checkID;
+    cout << endl;
+    cout << "searching...." << endl;
+    root->search(checkID);
 
     // STEP 1 : read employee records and create BST from it
     // STEP 2 : display BST inorder

@@ -44,22 +44,43 @@ BinaryTreeNode *BinarySearchTree::getRoot() const
     return root;
 }
 
-Employee searchEmployee(BinaryTreeNode *root, int k)
+Employee searchEmployee(BinaryTreeNode *root, int k, int &cnt, int size)
 {
-    if (root == NULL || root->getPersonID() == k)
+    if (root == NULL)
     {
-        return root->getPerson();
+        cout << "NOT FOUND";
+        Employee obj;
+        return obj;
+    }
+    if (root->getPersonID() == k)
+    {
+        cout << endl;
+        cout << "Total items searched :" << cnt << endl;
+        if (cnt != size)
+        {
+            cout << size;
+            root->printPerson();
+            return root->getPerson();
+        }
+        else
+        {
+            cout << "NOT FOUND";
+            Employee obj;
+            return obj;
+        }
     }
     if (root->getPersonID() < k)
-        return searchEmployee(root->getRight(), k);
+        return searchEmployee(root->getRight(), k, ++cnt, size);
 
-    return searchEmployee(root->getLeft(), k);
+    return searchEmployee(root->getLeft(), k, ++cnt, size);
 }
 
 Employee BinarySearchTree ::search(int k)
 {
-    return searchEmployee(root, k);
+    int cnt = 0;
+    return searchEmployee(root, k, cnt, size);
 }
+
 BinaryTreeNode *insert2(BinaryTreeNode *node, Employee &emp)
 {
     if (node == NULL)
