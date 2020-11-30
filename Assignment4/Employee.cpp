@@ -40,7 +40,7 @@ int Employee::getID() const
 
 bool operator<(const Employee &p1, const Employee &p2)
 {
-    return p1.getID() < p1.getID();
+    return p1.getID() < p2.getID();
 }
 
 bool operator==(const Employee &p1, const Employee &p2)
@@ -53,8 +53,8 @@ bool operator==(const Employee &p1, const Employee &p2)
 void Employee ::printPersonObj()
 {
     cout << "Employee ID : " << ID;
-    cout << "First Name : " << firstname;
-    cout << "Last name : " << lastname;
+    cout << "  First Name : " << firstname;
+    cout << "  Last name : " << lastname;
 }
 
 void readandwriteFile(int n)
@@ -162,63 +162,8 @@ void read_specified(int total_cnt)
     }
 }
 
-void read_2_equal()
-{
-    Employee e[2];
-    for (int i = 0; i < 2; i++)
 
-    {
 
-        int id;
-        string fn, ln;
-        cout << "Enter details of the employee " << i + 1 << ": " << endl;
-        cout << "Enter firstname: " << endl;
-        cin >> fn;
-        cout << "Enter lastname: " << endl;
-        cin >> ln;
-        cout << "Enter ID: " << endl;
-        cin >> id;
-        e[i].setFirstName(fn);
-        e[i].setLastName(ln);
-        e[i].setID(id);
-    }
-    if (e[0] == e[1])
-
-        cout << "These are same employees" << endl;
-
-    else
-        cout << "These are  diffrent employees" << endl;
-}
-
-void read_2_compare()
-{
-    Employee e[2];
-    for (int i = 0; i < 2; i++)
-
-    {
-
-        int id;
-        string fn, ln;
-        cout << "Enter details of the employee " << i + 1 << ": " << endl;
-        cout << "Enter firstname: " << endl;
-        cin >> fn;
-        cout << "Enter lastname: " << endl;
-        cin >> ln;
-        cout << "Enter ID: " << endl;
-        cin >> id;
-        e[i].setFirstName(fn);
-        e[i].setLastName(ln);
-        e[i].setID(id);
-    }
-    if (e[0] < e[1])
-    {
-        cout << "Employee " << e[1].getFirstName() << " has greater employee ID";
-    }
-    else
-    {
-        cout << "Employee " << e[0].getFirstName() << " has greater employee ID";
-    }
-}
 
 // int main()
 // {
