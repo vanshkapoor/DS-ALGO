@@ -93,12 +93,12 @@ int main()
     int n;
     cout << "Enter the number of records to be read from the database";
     cin >> n;
-    readFile(n);
+    //readFile(n);
     //  readFile(n, root);
     Employee e(10, "sharma", "kaushal");
-    //e.printPersonObj();
+    e.printPersonObj();
     root->insert(e);
-    //root->print();
+    root->print();
 
     Employee e2(5, "kapoor", "VANSH");
     Employee e3(3, "kapoor", "VANSH");
