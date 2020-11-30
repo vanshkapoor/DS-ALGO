@@ -173,6 +173,12 @@ int main()
     cout << endl;
     cout << "searching...." << endl;
     root->search(checkID);
+    cout << endl;
+    cout << endl;
+    cout << endl;
+    cout << "Clearing...." << endl;
+    // root->clear();
+    cout << "CLEARED";
 
     // STEP 1 : read employee records and create BST from it
     // STEP 2 : display BST inorder

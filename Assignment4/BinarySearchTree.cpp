@@ -5,9 +5,11 @@
 
 using namespace std;
 
+// CONSTRUCTOR
 BinarySearchTree::BinarySearchTree()
 {
     root = NULL;
+    size = 0;
 }
 
 void printBinaryTree(BinaryTreeNode *root)
@@ -120,6 +122,25 @@ BinaryTreeNode *helperrem(BinaryTreeNode *node)
 
     return current;
 }
+// void clear2(BinaryTreeNode *root)
+// {
+
+//     if (root == NULL)
+//         return;
+//     clear2(root->left);
+//     clear2(root->right);
+//     cout << "\n Deleting employee: ";
+//     // root->getPerson().printPersonObj();
+//     delete root;
+// }
+
+// bool BinarySearchTree ::clear()
+// {
+//     clear2(root);
+//     if (root == NULL)
+//         return true;
+//     return false;
+// }
 BinaryTreeNode *remove2(BinaryTreeNode *root, int k, bool &res)
 {
     if (root == NULL)
