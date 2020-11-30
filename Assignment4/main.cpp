@@ -37,7 +37,7 @@ void readFile(int n)
     string firstname;
     string lastname;
     string ID;
-    while (file >> word)
+    while (file >> word && n > 0)
     {
 
         if (cnt == 0)
@@ -65,6 +65,7 @@ void readFile(int n)
             root->insert(e);
             cout << endl;
             total_cnt++;
+            n--;
         }
         cnt++;
     }

@@ -100,7 +100,6 @@ BinaryTreeNode *insert2(BinaryTreeNode *node, Employee &emp)
         // cout << "here3";
         node->right = insert2(node->right, emp);
     }
-
     return node;
 }
 
