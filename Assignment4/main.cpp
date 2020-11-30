@@ -14,7 +14,7 @@ void readFile(int n)
     // add that employee to binary tree node
     if (n < 20 || n > 50)
     {
-        cout << "Enter no of records  between 20 to 50 only ";
+        cout << "Enter no of records  between 20 and 50 only ";
         int p = 0;
         cin >> p;
         readFile(p);
@@ -34,19 +34,23 @@ void readFile(int n)
     string word;
     int total_cnt = 0;
 
-    while (file >> word && n > 0)
+    while ( n-- > 0)
     {
-
-        cout << word << "     ";
+        string firstname;
+        string lastname;
+        int id;
+        file >> firstname;
+        file>>lastname;
+        file>>id;
+        Employee e(id,lastname,firstname);
+        e.printPersonObj();
+        cout<<endl;
+        root->insert(e);
+        //cout <<firstname<<"   "<<lastname<<"   "<<id<<endl;
         cnt++;
-        if (cnt == 3)
-        {
-            cout << endl;
-            cnt = 0;
-            total_cnt++;
-            n--;
+
         }
-    }
+
 
     // while (n-- > 0)
     // {
@@ -64,7 +68,7 @@ void readFile(int n)
     //     cnt++;
     // }
     cout << endl;
-    cout << "TOTAL RECORD COUNT = " << total_cnt << endl;
+    cout << "TOTAL RECORD COUNT = " <<cnt << endl;
     file.close();
 }
 
@@ -74,12 +78,12 @@ int main()
     int n;
     cout << "Enter the number of records to be read from the database";
     cin >> n;
-    readFile(n);
+    //readFile(n);
     //  readFile(n, root);
     Employee e(10, "sharma", "kaushal");
-    //e.printPersonObj();
+    e.printPersonObj();
     root->insert(e);
-    //root->print();
+    root->print();
 
     Employee e2(5, "kapoor", "VANSH");
     Employee e3(3, "kapoor", "VANSH");
