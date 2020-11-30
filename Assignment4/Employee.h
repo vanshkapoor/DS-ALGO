@@ -6,7 +6,9 @@
 #include <bits/stdc++.h>
 #include <iostream>
 #include <string.h>
+#include<stdio.h>
 
+using namespace std;
 class Employee
 {
 private:
@@ -30,7 +32,7 @@ public:
 	}
 	~Employee()
 	{
-		cout << "Object is being deleted" << endl;
+		//cout << "Object is being deleted" << endl;
 	}
 	void setFirstName(string first);
 	void setLastName(string last);

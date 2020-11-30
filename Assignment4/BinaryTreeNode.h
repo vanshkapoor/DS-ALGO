@@ -10,7 +10,7 @@ using namespace std;
 
 class BinaryTreeNode
 {
-protected:
+public:
 	Employee person;
 	BinaryTreeNode *left;
 	BinaryTreeNode *right;
