@@ -1,4 +1,3 @@
-//Employee.h provided by Dr. Meilin Liu, and you can modify it if you want.
 
 #ifndef _Employee_
 #define _Employee_
@@ -30,10 +29,10 @@ public:
 		lastname = person.lastname;
 		firstname = person.lastname;
 	}
-	~Employee()
-	{
-		//cout << "Object is being deleted" << endl;
-	}
+	// ~Employee()
+	// {
+	// 	cout << "Object is being deleted" << endl;
+	// }
 	void setFirstName(string first);
 	void setLastName(string last);
 	void setID(int IdNum);

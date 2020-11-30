@@ -1,5 +1,3 @@
-////Employee.h provided by Dr. Meilin Liu, and you can modify it if you want.
-
 #ifndef _BinaryTreeNode_
 #define _BinaryTreeNode_
 #include <iostream>
@@ -19,6 +17,8 @@ public:
 	BinaryTreeNode(Employee &newEmployee, BinaryTreeNode *rightptr = NULL, BinaryTreeNode *leftptr = NULL)
 	{
 		person = newEmployee;
+		left=leftptr;
+		right=rightptr;
 	}
 
 	BinaryTreeNode *getLeft()
@@ -45,6 +45,6 @@ public:
 	}
 	// Employee searchEmployee()
 
-	~BinaryTreeNode();
+	//~BinaryTreeNode();
 };
 #endif

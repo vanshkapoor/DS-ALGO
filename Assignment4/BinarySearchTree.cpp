@@ -2,37 +2,45 @@
 #include <string.h>
 #include "BinarySearchTree.h"
 #include "BinaryTreeNode.h"
-
+#include<queue>
 using namespace std;
 
 // CONSTRUCTOR
 BinarySearchTree::BinarySearchTree()
 {
-    root = NULL;
+      root->left=NULL;
+      root->right=NULL;
+      root = NULL;
+
     size = 0;
 }
 
 void printBinaryTree(BinaryTreeNode *root)
-{
+{  //cout<<"print b tree";
     if (root == NULL)
-    {
+    { //cout<<"here in return";
         return;
     }
-    printBinaryTree(root->getLeft());
+
+      //cout<<"in else"<<root->left->getPersonID();
+
+   printBinaryTree(root->left);
+    //cout<<"after print call";
     root->printPerson();
     cout << endl;
-    printBinaryTree(root->getRight());
+    printBinaryTree(root->right);
 }
 
 bool BinarySearchTree::print()
-{
+{ //cout<<"called ptint heas";
     if (root == NULL)
-    { //cout<<"print";
+    { //cout<<"print false";
         return false;
     }
     // root->printBinaryTree();
+    //cout<<"true above";
     printBinaryTree(root);
-
+    //cout<<"true";
     return true;
 }
 
@@ -85,7 +93,7 @@ Employee BinarySearchTree ::search(int k)
 
 BinaryTreeNode *insert2(BinaryTreeNode *node, Employee &emp)
 {
-    if (node == NULL)
+  if (node == NULL)
     {
         // cout << "Here1";
         return new BinaryTreeNode(emp);
@@ -108,6 +116,7 @@ bool BinarySearchTree ::insert(Employee &emp)
 
     root = insert2(root, emp);
     size += 1;
+    //cout<<"size updated";
     return true;
     // AddinBinaryTree(root,)
 }
@@ -121,25 +130,25 @@ BinaryTreeNode *helperrem(BinaryTreeNode *node)
 
     return current;
 }
-// void clear2(BinaryTreeNode *root)
-// {
+void clear2(BinaryTreeNode *root)
+{
 
-//     if (root == NULL)
-//         return;
-//     clear2(root->left);
-//     clear2(root->right);
-//     cout << "\n Deleting employee: ";
-//     // root->getPerson().printPersonObj();
-//     delete root;
-// }
+    if (root == NULL)
+        return;
+    clear2(root->left);
+    clear2(root->right);
+    cout << "\n Deleting employee: ";
+     root->getPerson().printPersonObj();
+    delete root;
+}
 
-// bool BinarySearchTree ::clear()
-// {
-//     clear2(root);
-//     if (root == NULL)
-//         return true;
-//     return false;
-// }
+bool BinarySearchTree ::clear()
+{
+    clear2(root);
+    if (root == NULL)
+        return true;
+    return false;
+}
 BinaryTreeNode *remove2(BinaryTreeNode *root, int k, bool &res)
 {
     if (root == NULL)
@@ -181,7 +190,10 @@ bool BinarySearchTree ::remove(int k)
     bool res = false;
 
     root = remove2(root, k, res);
+    if(res)
     size = size - 1;
     // print();
+    if(!res)
+    cout<<"\nRECORD NOT FOUND";
     return res;
 }

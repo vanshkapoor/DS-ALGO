@@ -1,5 +1,3 @@
-//Employee.h provided by Dr. Meilin Liu, and you can make minor modifications if //you want.
-
 #ifndef _BinarySearchTree_
 #define _BinarySearchTree_
 
@@ -15,7 +13,7 @@ public:
 	BinarySearchTree(); //constructor
 	~BinarySearchTree() //destructor
 	{
-		cout << "deleted";
+		cout << "Destructing BST";
 	}
 	bool clear(); // using postorder tree traversal
 	bool insert(Employee &emp);

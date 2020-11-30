@@ -38,37 +38,37 @@ void readFile(int n)
     string lastname;
     string ID;
     while (file >> word && n > 0)
-    {
+ {
 
-        if (cnt == 0)
-        {
-            firstname = word;
-        }
-        else if (cnt == 1)
-        {
-            lastname = word;
-        }
-        else if (cnt == 2)
-        {
-            ID = word;
-        }
-        else
-        {
-            stringstream toint(ID);
-            cnt = 0;
-            int id = 0;
-            cout << firstname << " " << lastname << " " << ID;
-            toint >> id;
-            // int id =
-            Employee e(id, lastname, firstname);
-            // e.printPersonObj();
-            root->insert(e);
-            cout << endl;
-            total_cnt++;
-            n--;
-        }
-        cnt++;
-    }
+     if (cnt == 0)
+     {
+         firstname = word;
+     }
+     else if (cnt == 1)
+     {
+         lastname = word;
+     }
+     else if (cnt == 2)
+     {
+         ID = word;
+     }
+     else
+     {
+         stringstream toint(ID);
+         cnt = 0;
+         int id = 0;
+         cout << firstname << " " << lastname << " " << ID;
+         toint >> id;
+         // int id =
+         Employee e(id, lastname, firstname);
+         // e.printPersonObj();
+         root->insert(e);
+         cout << endl;
+         total_cnt++;
+         n--;
+     }
+     cnt++;
+ }
 
     // while (n-- > 0)
     // {
@@ -104,25 +104,28 @@ int main()
     cin >> n;
     readFile(n);
     // readFile(n, root);
-    Employee e(10, "sharma", "kaushal");
+    //Employee e(10, "sharma", "kaushal");
     // e.printPersonObj();
-    root->insert(e);
-    // root->print();
-
-    Employee e2(5, "kapoor", "VANSH");
-    Employee e3(3, "kjl", "VANSH");
-    Employee e4(6, "kapoor", "VAH");
-    // Employee e5(12, "kaoor", "VANSH");
-    // Employee e6(9, "kl", "varun");
+    //root->insert(e);
+//cout<<"print";
+     //root->print();
+//cout<<"after print";
+    //Employee e2(20, "kapoor", "VANSH");
+    //Employee e3(30, "kjl", "VANSH");
+    //Employee e4(40, "kapoor", "VAH");
+    //Employee e5(9, "kaoor", "VANSH");
+    //Employee e6(8, "kl", "varun");
 
     //e.printPersonObj();
-    root->insert(e2);
-    root->insert(e3);
-    root->insert(e4);
-    // root->insert(e5);
-    // root->insert(e6);
+//root->getRoot()->printPerson();
+    //root->insert(e2);
 
-    root->print();
+    //root->insert(e3);
+    //root->insert(e4);
+     //root->insert(e5);
+     //root->insert(e6);
+
+     root->print();
     cout << endl;
     cout << endl;
     cout << "SIZE OF BST : ";
@@ -157,11 +160,13 @@ int main()
     cout << endl;
     cout << "BEFORE DELETION : " << endl;
     root->print();
-    root->remove(removeID);
+    bool rem=root->remove(removeID);
     cout << endl;
     cout << endl;
+    if(rem){
     cout << "AFTER DELETION : " << endl;
     root->print();
+    }
     cout << endl;
     cout << "SIZE OF BST : ";
     cout << "SIZE = " << root->BSTsize();
@@ -178,8 +183,8 @@ int main()
     cout << endl;
     cout << endl;
     cout << "Clearing...." << endl;
-    // root->clear();
-    cout << "CLEARED";
+     root->clear();
+    cout << "\nCLEARED";
 
     // STEP 1 : read employee records and create BST from it
     // STEP 2 : display BST inorder
