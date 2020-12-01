@@ -145,6 +145,7 @@ void clear2(BinaryTreeNode *root)
 bool BinarySearchTree ::clear()
 {
     clear2(root);
+      size=0;
     if (root == NULL)
         return true;
     return false;
